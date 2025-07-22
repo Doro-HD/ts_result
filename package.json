@@ -2,8 +2,10 @@
   "name": "@doro-hd/ts_result",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "type": "module",
+	"main": "index.js",
+	"files": ["dist/**/*"],
   "scripts": {
     "test": "vitest",
     "build": "tsc"
