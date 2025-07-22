@@ -10,28 +10,50 @@ interface IErr<T> {
 
 type TResult<TOk, TErr> = IOk<TOk> | IErr<TErr>
 
-const result = {
-	ok: <T>(data: T): IOk<T> => {
-		return {
-			status: 'ok',
-			data
-		}
-	},
-	isOk: <TOk, TErr>(result: TResult<TOk, TErr>): result is IOk<TOk> => {
-		return result.status === 'ok'
-	},
-	err: <T>(err: T): IErr<T> => {
-		return {
-			status: 'err',
-			err
-		}
-	},
-	isErr: <TOk, TErr>(result: TResult<TOk, TErr>): result is IErr<TErr> => {
-		return result.status === 'err'
-	},
+/**
+	* @description
+	* Creates an ok object, used for storing data obtained from operations that can produce an err
+	* @param data - The data to store inside of the object
+*/
+function ok<T>(data: T): IOk<T> {
+	return {
+		status: 'ok',
+		data
+	}
+}
+
+/**
+ * @description
+ * Checks if a result is of type Ok
+*/
+function isOk<TOk, TErr>(result: TResult<TOk, TErr>): result is IOk<TOk> {
+	return result.status === 'ok'
+}
+
+/**
+	* @description
+	* Creates an err object, used for representing that the operation failed
+	* @param err - The Error or a message, can be what type you want it to, should tell what went wrong
+*/
+function err<T>(err: T): IErr<T> {
+	return {
+		status: 'err',
+		err
+	}
+}
+
+/**
+ * @description
+ * Checks if a result is of type Err
+*/
+function isErr<TOk, TErr>(result: TResult<TOk, TErr>): result is IErr<TErr> {
+	return result.status === 'err'
 }
 
 export {
-	result,
+	ok,
+	isOk,
+	err,
+	isErr,
 	TResult
 }

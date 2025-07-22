@@ -1,5 +1,5 @@
 import { assert, describe, expect, it } from "vitest";
-import { result } from "./result";
+import * as result from "./result";
 
 describe('Ok', () => {
 	describe('Create ok objects', () => {
