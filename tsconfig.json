@@ -1,5 +1,6 @@
 {
 	"include": ["src/**/*.ts"],
+	"exclude": ["src/**/*.spec.ts"],
 	"compilerOptions": {
 		"target": "ESNext",
 		"module": "NodeNext",
