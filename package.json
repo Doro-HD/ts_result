@@ -1,0 +1,28 @@
+{
+  "name": "@doro-hd/ts_result",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest watch",
+    "build": "tsc"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "keywords": [
+    "ts",
+    "typescript",
+    "result"
+  ],
+  "author": "doro-hd",
+  "license": "ISC",
+  "packageManager": "pnpm@10.10.0",
+  "dependencies": {
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  }
+}
