@@ -31,7 +31,7 @@ const result = {
 	},
 }
 
-export default result;
 export {
+	result,
 	TResult
 }
